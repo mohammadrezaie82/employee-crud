@@ -154,7 +154,6 @@ watch(
           if (existingDate && !localMembers.value[i].displayDate) {
             localMembers.value[i].displayDate = formatDateForDisplay(existingDate);
             localMembers.value[i].tempDate = new Date(existingDate);
-            console.log(`📅 Updated display date for member ${i}:`, localMembers.value[i].displayDate);
           }
         }
       });
@@ -176,13 +175,11 @@ const addMember = () => {
     menu: false,
   });
   
-  console.log("✅ Member added, total:", fields.value.length);
 };
 
 const removeMember = (index: number) => {
   remove(index);
   localMembers.value.splice(index, 1);
-  console.log("🗑️ Member removed, remaining:", fields.value.length);
 };
 
 const confirmDate = (index: number) => {
