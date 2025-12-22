@@ -7,7 +7,6 @@ import { fa } from 'vuetify/locale'
 export const vuetify = createVuetify({
     components,
     directives,
-    rtl: true,
     icons: {
         defaultSet: "mdi",
     },

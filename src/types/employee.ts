@@ -1,3 +1,4 @@
+export type FamilyRelation = 'spouse' | 'son' | 'daughter'
 
 
 export interface Family {

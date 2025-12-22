@@ -132,7 +132,6 @@ const formatDateForDisplay = (dateValue: string | Date | null): string => {
 watch(
   fields,
   (newFields) => {
-    console.log("🔄 Fields changed:", newFields.length);
     
     if (newFields.length > localMembers.value.length) {
       for (let i = localMembers.value.length; i < newFields.length; i++) {
@@ -196,11 +195,6 @@ const confirmDate = (index: number) => {
   member.menu = false;
 
   setFieldValue(`family[${index}].dateOfBirth`, iso);
-  
-  console.log(`📅 Date confirmed for member ${index}:`, {
-    iso,
-    display: member.displayDate
-  });
 };
 </script>
 
