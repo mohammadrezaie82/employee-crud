@@ -3,10 +3,8 @@
     <h1 class="text-right">کارمندان</h1>
 
     <v-row class="mt-3">
-      <v-col v-for="emp in employees" :key="emp.id" cols="12" sm="6" md="4">
-        <v-card class="pa-3 text-right" outlined @click="openEmployee(emp.id)" >
-          {{ emp.firstName }} {{ emp.lastName }}
-        </v-card>
+      <v-col v-for="employee in employees" :key="employee.id" cols="12" sm="6" md="4">
+        <EmployeeCard :employee="employee" @click="openEmployee"/>
       </v-col>
     </v-row>
 
@@ -46,6 +44,7 @@ import {
   updateEmployee,
   deleteEmployee,
 } from "../api/employee.api"
+import EmployeeCard from "../components/EmployeeCard.vue"
 
 const employees = ref<EmployeeBrief[]>([])
 const selectedEmployee = ref<Employee | null>(null)

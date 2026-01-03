@@ -21,8 +21,7 @@ export const employeeSchema = yup.object({
 
                 relation: yup.mixed<"spouse" | "daughter" | "son">().oneOf(["spouse", "daughter", "son"], "نسبت نامعتبر است").required("نسبت الزامی است"),
 
-                dateOfBirth: yup.date().typeError("تاریخ معتبر نیست").max(new Date(), "تاریخ تولد نمی‌تواند در آینده باشد")
-.required("تاریخ تولد الزامی است"),
+                dateOfBirth: yup.date().typeError("تاریخ معتبر نیست").max(new Date(), "تاریخ تولد نمی‌تواند در آینده باشد").required("تاریخ تولد الزامی است"),
             })
         )
         .nullable()
